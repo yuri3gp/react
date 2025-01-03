@@ -1,4 +1,3 @@
-import React from 'react';
 import useDragAndDrop from '../hooks/useDragAndDrop';
 
 const DragAndDropLinked = () => {
