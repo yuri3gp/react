@@ -1,9 +1,9 @@
-import CarInfo from './components/CarInfo'
+import UsersTable from './components/UsersTable'
 
 function App() {
   return (
     <>
-      <CarInfo />
+      <UsersTable />
     </>
   )
 }
