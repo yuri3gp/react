@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 type User = {
     firstName: string;
@@ -14,12 +15,8 @@ const UsersTable = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await fetch('https://node-xb1g.onrender.com/users');
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar usuários');
-                }
-                const data: User[] = await response.json();
-                setUsers(data);
+                const response = await axios.get('https://node-xb1g.onrender.com/users');
+                setUsers(response.data);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'Erro desconhecido');
             } finally {
